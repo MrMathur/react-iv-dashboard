@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/react-iv-dashboard/static/css/main.bcf3b818.css",
+    "main.js": "/react-iv-dashboard/static/js/main.a5374c63.js",
+    "static/media/student7.csv": "/react-iv-dashboard/static/media/student7.1761ee89ff3f905ea853.csv",
+    "static/media/student6.csv": "/react-iv-dashboard/static/media/student6.eea15220d5dbbb4b92d3.csv",
+    "static/media/student8.csv": "/react-iv-dashboard/static/media/student8.654da28527507437f233.csv",
+    "static/media/student5.csv": "/react-iv-dashboard/static/media/student5.2cabd844095d9fe1c8b0.csv",
+    "static/media/student2.csv": "/react-iv-dashboard/static/media/student2.15c5a8a4e94f5b6d750e.csv",
+    "static/media/student1.csv": "/react-iv-dashboard/static/media/student1.5b182510cf76ee62c7f3.csv",
+    "static/media/teacher.csv": "/react-iv-dashboard/static/media/teacher.2fc512d653d5c6f9671a.csv",
+    "static/media/student4.csv": "/react-iv-dashboard/static/media/student4.35eb50f76a8bee08c17a.csv",
+    "static/media/student3.csv": "/react-iv-dashboard/static/media/student3.e08b0ebf8dc78768ba2b.csv",
+    "static/media/student9.csv": "/react-iv-dashboard/static/media/student9.0b381e2ac3783649e0f7.csv",
+    "static/media/student10.csv": "/react-iv-dashboard/static/media/student10.8b0f81f7acb5b50f3cc9.csv",
+    "static/media/floorplan.png": "/react-iv-dashboard/static/media/floorplan.d26861bef5a7807dd525.png",
+    "static/media/transcript.csv": "/react-iv-dashboard/static/media/transcript.9a4189ad46ea4dc58d09.csv",
+    "index.html": "/react-iv-dashboard/index.html",
+    "main.bcf3b818.css.map": "/react-iv-dashboard/static/css/main.bcf3b818.css.map",
+    "main.a5374c63.js.map": "/react-iv-dashboard/static/js/main.a5374c63.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.bcf3b818.css",
+    "static/js/main.a5374c63.js"
+  ]
+}
