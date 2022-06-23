@@ -1,0 +1,42 @@
+.data-menu-container {
+  border-right: 1px solid #D0D0D0;
+  padding: 12px;
+  overflow: scroll;
+}
+
+
+.form-header {
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-transform: capitalize;
+
+  color: #171717;
+
+}
+
+.data-menu-button {
+  width: 100%;
+}
+
+.form-button {
+  background: #FAFAFA;
+  opacity: 0.7;
+  border: 1px solid #D0D0D0;
+  width: 100%;
+
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 23px;
+  text-align: center;
+
+  color: #5B5B5B;
+
+  cursor: pointer;
+}

@@ -1,0 +1,62 @@
+.panel-header {
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 200%;
+  text-transform: capitalize;
+  color: #171717;
+  user-select: none;
+}
+
+.scrollable {
+  overflow: scroll !important;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.padded {
+  padding: 10px;
+}
+
+.bordered {
+  border: 1px solid #D0D0D0;
+}
+
+.h100 {
+  height: 100%;
+}
+
+.h50 {
+  height: 50%;
+}
+
+.h70 {
+  height: 70%;
+}
+
+.h30 {
+  height: 30%;
+}
+
+.redbg {
+  background-color: red;
+}
+
+.br0 {
+  border-radius: 0px !important;
+}
+
+.unselect {
+  opacity:12%;
+}
+
+.hover-cursor:hover {
+  cursor: pointer;
+}
+
+.pull-up {
+  transform: translateY(-100%);
+}

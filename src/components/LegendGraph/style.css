@@ -1,0 +1,8 @@
+.words {
+  user-select:none;
+  dominant-baseline: hanging;
+}
+
+.word-circle:hover {
+  cursor: pointer;
+}
