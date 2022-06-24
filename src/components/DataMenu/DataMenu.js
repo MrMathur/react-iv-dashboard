@@ -43,7 +43,7 @@ export default class DataMenu extends Component {
     UploadLocal(data, this.defaultTranscript);
     this.paths = this.importAll(require.context('./sample_data/paths/', false, /\.(csv)$/));
     for (let path in this.paths) {
-      UploadLocal(this.paths[path], this.defaultPosition, true);
+      UploadLocal(this.paths[path], this.defaultPosition, true, path);
     }
   }
 
