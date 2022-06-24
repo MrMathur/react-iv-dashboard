@@ -1,5 +1,49 @@
 import * as d3 from 'd3';
 
+// Drawing the Cursor
+function DrawCursor(svg, xScale, time, type) {
+
+  let color = (type == 'video-cursor') ? '#171717' : '#F0F0F0';
+
+  svg.select(`#${type}`).remove();
+
+  let height = svg.style('height').substring(0, svg.style('height').length - 2);
+
+  let video_cursor = svg.append('g')
+  .attr('id', type)
+  .attr('transform', `translate(${xScale(time)}, 0)`);
+
+  // Drawing the line
+  video_cursor.append('line')
+  .style("stroke", color)
+  .style("stroke-width", 1)
+  .attr("x1", 0)
+  .attr("y1", 0)
+  .attr("x2", 0)
+  .attr("y2", height); 
+
+  // Drawing the triangles
+  const triangleSize = 25;
+
+  var triangle = d3.symbol()
+    .type(d3.symbolTriangle)
+    .size(triangleSize);
+
+  video_cursor.append("path")
+    .attr("d", triangle)
+    .attr("stroke", color)
+    .attr("fill", color)
+    .attr("transform", `translate(0,3) rotate(180)`);
+
+  video_cursor.append("path")
+    .attr("d", triangle)
+    .attr("stroke", color)
+    .attr("fill", color)
+    .attr("transform", `translate(0,${height - 3})`);
+
+  console.log(height);
+}
+
 const DrawTimelineGraph = function(svg_id, data, videoLen, time, colorScale, setPlaybackTime) {
   // Setting up SVG
   let svg = d3.select(`#${svg_id}`);
@@ -62,22 +106,14 @@ const DrawTimelineGraph = function(svg_id, data, videoLen, time, colorScale, set
   .on('click', e => {
     let coords = d3.pointer(e);
 
+    let time = (pixelToTime(coords[0]));
 
-    let time = Math.floor(pixelToTime(coords[0]));
-
-    d3.select('#video-cursor')
-      .attr('cx', xScale(time));
-
+    DrawCursor(svg, xScale, time, 'video-cursor');
     setPlaybackTime(time);
-
   });
 
-  svg.append('circle')
-    .attr('r', RADIUS)
-    .attr('id', 'video-cursor')
-    .attr('fill', 'blue')
-    .attr('cx', xScale(time))
-    .attr('cy', height/2);
+  // Adding Video Cursor
+  DrawCursor(svg, xScale, time, 'video-cursor');
 }
 
 export default DrawTimelineGraph;
