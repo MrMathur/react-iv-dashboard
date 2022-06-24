@@ -11,7 +11,7 @@ const DrawWordGraph = function(svg_id, data) {
   // d3 Scales
   let fontScale = d3.scaleLinear()
     .domain(d3.extent(data, d => d.count))
-    .range([6, 30]);
+    .range([8, 50]);
 
   // Draw cloud
   let layout = d3Cloud()
