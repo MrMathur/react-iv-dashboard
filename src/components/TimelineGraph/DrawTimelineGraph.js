@@ -40,8 +40,6 @@ function DrawCursor(svg, xScale, time, type) {
     .attr("stroke", color)
     .attr("fill", color)
     .attr("transform", `translate(0,${height - 3})`);
-
-  console.log(height);
 }
 
 const DrawTimelineGraph = function(svg_id, data, videoLen, time, colorScale, setPlaybackTime) {
