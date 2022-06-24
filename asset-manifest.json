@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/react-iv-dashboard/static/css/main.bcf3b818.css",
-    "main.js": "/react-iv-dashboard/static/js/main.0d15e42f.js",
+    "main.js": "/react-iv-dashboard/static/js/main.32d636c9.js",
     "static/media/student7.csv": "/react-iv-dashboard/static/media/student7.1761ee89ff3f905ea853.csv",
     "static/media/student6.csv": "/react-iv-dashboard/static/media/student6.eea15220d5dbbb4b92d3.csv",
     "static/media/student8.csv": "/react-iv-dashboard/static/media/student8.654da28527507437f233.csv",
@@ -17,10 +17,10 @@
     "static/media/transcript.csv": "/react-iv-dashboard/static/media/transcript.9a4189ad46ea4dc58d09.csv",
     "index.html": "/react-iv-dashboard/index.html",
     "main.bcf3b818.css.map": "/react-iv-dashboard/static/css/main.bcf3b818.css.map",
-    "main.0d15e42f.js.map": "/react-iv-dashboard/static/js/main.0d15e42f.js.map"
+    "main.32d636c9.js.map": "/react-iv-dashboard/static/js/main.32d636c9.js.map"
   },
   "entrypoints": [
     "static/css/main.bcf3b818.css",
-    "static/js/main.0d15e42f.js"
+    "static/js/main.32d636c9.js"
   ]
 }
