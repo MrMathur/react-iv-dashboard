@@ -29,25 +29,24 @@ export default class HelpModal extends Component {
           <p>Specify the youtube link for the video whose data you want to visualize. For example, <a href="https://youtu.be/d8_pRUR-hmg" target="_blank">https://youtu.be/d8_pRUR-hmg</a></p>
           <Divider />
           <h6>Transcript</h6>
-          <p>Describe the conversations in the video in the form of timestamped transcript. The transcript should be a CSV file containing the following information: 
+          <p>Describe the conversations in the video in the form of timestamped transcript. The transcript should be a CSV file containing the following information: </p>
             <ul>
-              <li>name: The name/identifier for speaker of a dialogue</li>
-              <li>start_time: The timestamp in the video (in seconds) where the speaker utters the dialogue</li>
-              <li>end_time: The timestamp in the video (in seconds) where the speaker stops speaking the dialogue</li>
-              <li>content: The words uttered in the dialogue</li>
+              <li><b>name:</b> The name/identifier for speaker of a dialogue</li>
+              <li><b>start_time:</b> The timestamp in the video (in seconds) where the speaker utters the dialogue</li>
+              <li><b>end_time:</b> The timestamp in the video (in seconds) where the speaker stops speaking the dialogue</li>
+              <li><b>content:</b> The words uttered in the dialogue</li>
             </ul>
-            You can find an example of a typical transcript <a href={Transcript} download="transcript.csv" target="_blank">here</a>.
-          </p>
+            <p>You can find an example of a typical transcript <a href={Transcript} download="transcript.csv" target="_blank">here</a>.</p>
           <Divider />
           <h6>Position Data</h6>
           <p>
-            Describe the positional data for every person in the video as a <a href='https://www.benrydal.com/software/mondrian-transcription' target='_blank'>Mondrian Transcript</a>. The transcript should be uploaded as a CSV, titled the name of the person, containing: 
+            Describe the positional data for every person in the video as a <a href='https://www.benrydal.com/software/mondrian-transcription' target='_blank'>Mondrian Transcript</a>. The transcript should be uploaded as a CSV, titled the name of the person, containing: </p>
             <ul>
-              <li>time: The timestamp in the video for any given position</li>
-              <li>x: The x-position of the person at that time</li>
-              <li>y: The y-position of the person at that time</li>
+              <li><b>time:</b> The timestamp in the video for any given position</li>
+              <li><b>x:</b> The x-position of the person at that time</li>
+              <li><b>y:</b> The y-position of the person at that time</li>
             </ul>
-            You can find an example <a href={TeacherPosition} download="teacher.csv" target='_blank'>here</a>. You can use the <a href='https://www.benrydal.com/software/mondrian-transcription' target='_blank'>Mondrian Transcription tool</a> to create these files.
+            <p>You can find an example <a href={TeacherPosition} download="teacher.csv" target='_blank'>here</a>. You can use the <a href='https://www.benrydal.com/software/mondrian-transcription' target='_blank'>Mondrian Transcription tool</a> to create these files.
           </p>
           <Divider />
           <h6>Floor Plan</h6>
@@ -58,7 +57,8 @@ export default class HelpModal extends Component {
         </Modal.Body> 
         <Modal.Footer>
           <p>
-          Website, visualizations, and content designed and developed by <a href="https://arpitmathur.info/" target="_blank">Arpit Mathur</a> and <a href="https://www.benrydal.com/" target="_blank">Ben Rydal Shapiro</a>. To contribute, visit <a href="https://github.com/MrMathur/react-iv-dashboard" target="_blank">https://github.com/MrMathur/react-iv-dashboard</a>.
+          Website, visualizations, and content designed and developed by <a href="https://arpitmathur.info/" target="_blank">Arpit Mathur</a> and <a href="https://www.benrydal.com/" target="_blank">Ben Rydal Shapiro</a>.<br />
+          To contribute, visit <a href="https://github.com/MrMathur/react-iv-dashboard" target="_blank">https://github.com/MrMathur/react-iv-dashboard</a>.
           </p>
         </Modal.Footer>
       </Modal>
