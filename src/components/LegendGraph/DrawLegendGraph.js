@@ -5,7 +5,6 @@ const DrawLegendGraph = function(svg_id, data, addToFilter, removeFromFilter, fi
   data = data.sort((a,b) => b.wordCount - a.wordCount);
 
   // Setting up SVG
-  let peopleCount = data.length;
   let svg = d3.select(`#${svg_id}`);
   
 
@@ -26,6 +25,27 @@ const DrawLegendGraph = function(svg_id, data, addToFilter, removeFromFilter, fi
   svg.attr('height', height);
 
   let currentY = 0;
+  
+  let app = d3.select('.App');
+  let Tooltip = d3.select('.tooltip');
+
+  let mouseover = function(d) {
+    Tooltip
+      .style("opacity", 1);
+  }
+
+  let mousemove = function(e,d) {
+    let coords = d3.pointer(e, app);
+    Tooltip
+      .html(`Words: ${d.wordCount}`)
+      .style("left", (coords[0] + 5) + "px")
+      .style("top", (coords[1]) + "px");
+  }
+
+  let mouseleave = function(d) {
+    Tooltip
+      .style("opacity", 0);
+  }
 
   let groups = svg.selectAll('.words')
     .data(data)
@@ -36,14 +56,13 @@ const DrawLegendGraph = function(svg_id, data, addToFilter, removeFromFilter, fi
       currentY += (2 * rScale(d.wordCount) + PADDING);
       return outputposition;
     })
-    .classed('unselect', d => !d.active);
+    .classed('unselect', d => !d.active); 
 
   groups.append('circle')
     .attr('r', d => rScale(d.wordCount))
     .attr('class', 'word-circle')
     .attr('fill', d => colorScale(d.name.toLowerCase()))
     .attr('cy', d => rScale(d.wordCount));
-    
 
   groups.append('text')
     .text(d => {
@@ -52,7 +71,7 @@ const DrawLegendGraph = function(svg_id, data, addToFilter, removeFromFilter, fi
     })
     .attr('class', 'words')
     .attr('text-anchor', 'middle')
-    .attr('transform', d => `translate(0,${2 * rScale(d.wordCount) + NAME_PADDING})`);
+    .attr('transform', d => `translate(0,${2 * rScale(d.wordCount) + NAME_PADDING})`);  
 
   groups.on('click', function(e,d) {
     
@@ -65,7 +84,10 @@ const DrawLegendGraph = function(svg_id, data, addToFilter, removeFromFilter, fi
         addToFilter(d.name);
       }
     }
-  });
+  })
+  .on('mouseover', mouseover)
+  .on('mousemove', mousemove)
+  .on('mouseleave', mouseleave);   
 }
 
 export default DrawLegendGraph;

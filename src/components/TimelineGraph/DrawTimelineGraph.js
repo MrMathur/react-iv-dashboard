@@ -63,6 +63,28 @@ const DrawTimelineGraph = function(svg_id, data, videoLen, time, colorScale, set
   let yScale = d3.scaleLinear()
     .domain([0, d3.max(data, d => d.wordCount)])
     .range([0, height/2]);
+
+  let app = d3.select('.App');
+  let Tooltip = d3.select('.tooltip');
+
+  let mouseover = function(d) {
+    Tooltip
+      .style("opacity", 1);
+  }
+
+  let mousemove = function(e,d) {
+    let coords = d3.pointer(e, app);
+    let name = d.name.charAt(0).toUpperCase() + d.name.slice(1);
+    Tooltip
+      .html(`${name}: ${d.content}`)
+      .style("left", (coords[0]) + "px")
+      .style("top", (coords[1] + 5) + "px");
+  }
+
+  let mouseleave = function(d) {
+    Tooltip
+      .style("opacity", 0);
+  }
   
   // Draw ellipses
   let ellipse = svg.selectAll('.dialogues')
@@ -77,18 +99,9 @@ const DrawTimelineGraph = function(svg_id, data, videoLen, time, colorScale, set
     .attr('fill', d => colorScale(d.name.toLowerCase()))
     .attr('opacity', 0.8);
 
-  ellipse.on('mouseover', (e,d) => {
-    let name = d.name.charAt(0).toUpperCase() + d.name.slice(1);
-    svg.append('text')
-      .text(`${name}: ${d.content}`)
-      .attr('id', 'dialogue-text')
-      .attr('cursor', 'pointer')
-      .attr('text-anchor', 'middle')
-      .attr('transform', `translate(${width/2}, ${3 * height / 4})`);
-  })
-  .on('mouseout', () => {
-    d3.selectAll('#dialogue-text').remove();
-  });
+  ellipse.on('mouseover', mouseover)
+    .on('mousemove', mousemove)
+    .on('mouseleave', mouseleave);
 
   d3.select('#x-axis').remove();
   

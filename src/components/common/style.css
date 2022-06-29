@@ -60,3 +60,12 @@
 .pull-up {
   transform: translateY(-100%);
 }
+
+.tooltip {
+  position: absolute;
+  background-color: #fff;
+  border: solid 2px #171717;
+  border-radius: 5px;
+  padding: 5px;
+  z-index: 1;
+}

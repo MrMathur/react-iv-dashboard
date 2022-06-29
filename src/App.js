@@ -12,6 +12,8 @@ import './components/common/style.css';
 import './App.css';
 import React, { Component } from 'react';
 import WordDataPrep from './components/WordGraph/WordDataPrep';
+import Tooltip from './components/Tooltip/Tooltip';
+import * as d3 from 'd3';
 
 export default class App extends Component {
 
@@ -38,6 +40,10 @@ export default class App extends Component {
       colorScale: null,
       jumpCon: false
     }
+  }
+
+  componentDidMount() {
+    d3.select('.tooltip').style('opacity', 0);
   }
 
   toggleHelp = () => {
@@ -123,6 +129,7 @@ export default class App extends Component {
   render() {
     return (
       <div className='App h100'>
+        <Tooltip />
         <Container className='h100'>
 
             {/* Navbar */}
